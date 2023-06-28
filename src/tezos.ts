@@ -14,7 +14,7 @@ tezos.setWalletProvider(wallet);
 
 // Asynchronous function that pops up the Beacon SDK UI to connect the app to the user's wallet
 const connectWallet = async () => {
-  await wallet.requestPermissions({ network: { type: NetworkType.GHOSTNET } });
+  await wallet.requestPermissions();
 };
 
 // Asynchronous function to get the address of the user's connected account
@@ -26,9 +26,14 @@ const getConnectedWalletAccountAddress = async () => {
   return;
 };
 
+const isConnected = async (): Promise<boolean> => {
+  return !!(await getConnectedWalletAccountAddress());
+};
+
 export {
   tezos,
   connectWallet,
+  isConnected,
   getConnectedWalletAccountAddress,
   CONTRACT_ADDRESS,
 };
