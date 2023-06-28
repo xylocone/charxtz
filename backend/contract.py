@@ -1,4 +1,5 @@
-# A very simple SmartContract that will keep track of the XTZs sent into it and the addresses of the people who have sent them
+# A very simple SmartContract that will keep track of the XTZs sent into it and the addresses of
+# the people who have sent them
 
 import smartpy as sp
 
@@ -10,7 +11,7 @@ def main():
             self.data.fund = sp.tez(0)
             self.data.addressesAndAmts = {}
 
-        @sp.entry_point
+        @sp.entrypoint
         def sendAmount(self):
             assert sp.amount > sp.tez(0)
             self.data.fund += sp.amount
