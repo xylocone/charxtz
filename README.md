@@ -2,6 +2,8 @@
 
 CharXTZ (pronounced "Char-X-T-Zee", in rhyme with "Charity") is a decentralized app for aggregating funds in a Smart Contract with an admin-defined target. When the aggregation reaches a defined threshold, it is transferred to a predefined Tezos address, representing a charity.
 
+> _Note_: A notable lack of functionality in this dApp is that once the target is met, the counter jusst resets. We can create a boolean flag to represent whether a contract has finished its purpose, but then the dApp would not be left with any interactibilty after exhausting the limit of the SmartContract. For that reason, we chose it to keep it this way only.
+
 ## Development
 
 CharXTZ is powered by a simple Smart Contract on the backend, hosted on the Tezos blockchain. Since this is still pretty much a prototype, it is not hosted on the `mainnet` but is hosted on the `Ghostnet testnet` instead.
