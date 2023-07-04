@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { Button } from "flowbite-react";
 import { useState } from "react";
 
 // Internal dependencies
-import { connectWallet, getConnectedWalletAccountAddress } from "@/tezos";
+import { connectWallet, getConnectedWalletAccountAddress } from "../tezos";
 
 function Header() {
   const [userAddress, setUserAddress] = useState<string | null>(null);
@@ -19,15 +18,15 @@ function Header() {
   };
 
   return (
-    <header className="flex justify-between py-2 px-4 items-center">
-      <Link href="/">
-        <h2 className="text-lg p-2 font-mono font-extrabold tracking-widest border border-white">
+    <header className="flex items-center justify-between px-4 py-2">
+      <a href="/">
+        <h2 className="p-2 font-mono text-lg font-extrabold tracking-widest border border-white">
           CharXTZ
         </h2>
-      </Link>
+      </a>
       <Button
         gradientDuoTone="purpleToPink"
-        className="uppercase font-medium"
+        className="font-medium uppercase"
         onClick={async () => await handleConnect()}
         disabled={!!userAddress}
       >

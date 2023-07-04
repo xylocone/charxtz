@@ -1,15 +1,14 @@
-import type { NextPage } from "next";
 import { useEffect, useState, useRef } from "react";
 import { Card, Badge, Progress, TextInput, Button } from "flowbite-react";
 import { motion } from "framer-motion";
 
 // Internal dependencies
-import type { ContractStorage, CharityComponentProps } from "@/types";
-import { getStorage, donate } from "@/api";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import type { ContractStorage, CharityComponentProps } from "./types";
+import { getStorage, donate } from "./api";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
-const HomePage: NextPage = () => {
+const HomePage = () => {
   const [storage, setStorage] = useState<ContractStorage | null>(null);
 
   async function updateStorage() {
@@ -53,6 +52,8 @@ export function CharityComponent(props: CharityComponentProps) {
     (timestamp = 18451781118),
     (charity = "0x189189de23rjo");
 
+  donations;
+
   const handleDonation = async () => {
     if (amountRef.current) await donate(parseInt(amountRef.current.value, 10));
   };
@@ -61,7 +62,7 @@ export function CharityComponent(props: CharityComponentProps) {
     <motion.div animate={{ y: 0, opacity: 1 }} initial={{ y: 10, opacity: 0 }}>
       <Card className="my-4">
         <div>
-          <Badge color="purple" className="w-fit px-2 rounded-xl">
+          <Badge color="purple" className="px-2 w-fit rounded-xl">
             {new Date(timestamp * 1000).toLocaleDateString("en-us", {
               year: "numeric",
               month: "long",
@@ -69,7 +70,7 @@ export function CharityComponent(props: CharityComponentProps) {
             })}
           </Badge>
           <h3 className="font-semibold text-[1.5rem]">{title}</h3>
-          <p className="my-4 font-medium text-lg">
+          <p className="my-4 text-lg font-medium">
             <span className="text-gray">Charity Address: </span> {charity}
           </p>
           <div>
