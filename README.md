@@ -6,8 +6,6 @@ CharXTZ (pronounced "Char-X-T-Zee", in rhyme with "Charity") is a decentralized 
 
 > Do note that although the frontend requires local server for now, that does not mean that it is not fetching data from the Smart Contract. The above note is only in the context of the frontend. Data is still fetched and stored into the Smart Contract, which can be explored using the link given a little below.
 
----
-
 ## Overview
 
 Initially, we had hoped to create a charity platform where users would have the ability to create campaigns of their own, but that proved to be a more time-consuming task that we had anticipated. As a result, we were compelled by time, and also by the fact that this happens to be our first dApp, to create a simple accumulator. It works as follows:
