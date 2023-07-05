@@ -20,11 +20,16 @@ def main():
         def donate(self):
             assert sp.amount > sp.tez(0)
             self.data.total_fund += sp.amount
-            
-            self.data.donations[sp.sender] = sp.amount
+
+            if (self.data.donations.contains(sp.sender)):
+                self.data.donations[sp.sender] += sp.amount
+            else:
+                self.data.donations[sp.sender] = sp.amount
 
             if self.data.total_fund >= self.data.target:
                 sp.send(self.data.charity, self.data.total_fund)
+                self.data.total_fund = sp.tez(0) # reset fund
+                self.data.donations = {} # reset donations data
 
         @sp.entrypoint
         def setAdmin(self, params):
@@ -47,18 +52,22 @@ def test():
     scenario = sp.test_scenario()
     scenario.add_module(main)
 
-    # Test address
+    # Test addresses
     admin = sp.test_account("admin")
     alice = sp.test_account("alice")
+    bob = sp.test_account("bob")
     charity = sp.test_account("charity")
 
     # Create contract
     contract = main.CharityContract()
     scenario += contract
 
-    # change_num_values
-    scenario.h2("CharityContract Test1")
+    # Run test code
+    scenario.h2("CharityContract Test")
     contract.setAdmin(new_admin=admin.address)
-    contract.setFields(title="Team Ehsas Charity", target=sp.tez(5000), timestamp=sp.now, charity=charity.address).run(sender=admin)
+    contract.setFields(title="This is a sample title", target=sp.tez(5000), timestamp=sp.now, charity=charity.address).run(sender=admin)
     contract.donate().run(sender=alice, amount=sp.tez(15))
+    contract.donate().run(sender=alice, amount=sp.tez(15))
+    contract.donate().run(sender=alice, amount=sp.tez(5000))
+    contract.donate().run(sender=bob, amount=sp.tez(5))
             
