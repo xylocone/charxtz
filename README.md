@@ -32,7 +32,7 @@ npm install
 npm run dev
 ```
 
-- The Smart Contract address is `KT1Gz2Fz5Y8U3WQ2kM4y9giNEveYVx34rt2T`, and can be interacted with [here](https://better-call.dev/ghostnet/KT1Gz2Fz5Y8U3WQ2kM4y9giNEveYVx34rt2T).
+- The Smart Contract address is `KT1W1xZqZfaMRpR1cd17yVzsKhLgHwepYL9q`, and can be interacted with [here](https://better-call.dev/ghostnet/KT1W1xZqZfaMRpR1cd17yVzsKhLgHwepYL9q).
 - The presentation can be downloaded by clicking on [this link](https://github.com/xylocone/charxtz/raw/develop/presentation.pptx).
 
 <!-- Some images will go here -->
