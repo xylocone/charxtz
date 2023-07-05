@@ -1,5 +1,5 @@
 import { Button } from "flowbite-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Internal dependencies
 import { connectWallet, getConnectedWalletAccountAddress } from "../tezos";
@@ -16,6 +16,18 @@ function Header() {
       console.error("There was an error connecting your wallet: ", e);
     }
   };
+
+  useEffect(() => {
+    async function updateConnectedWalletAccountAddress() {
+      const connectedWalletAccountAddress =
+        await getConnectedWalletAccountAddress();
+
+      if (connectedWalletAccountAddress)
+        setUserAddress(connectedWalletAccountAddress);
+    }
+
+    updateConnectedWalletAccountAddress();
+  }, []);
 
   return (
     <header className="flex items-center justify-between px-4 py-2">
