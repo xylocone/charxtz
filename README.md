@@ -2,6 +2,10 @@
 
 CharXTZ (pronounced "Char-X-T-Zee", in rhyme with "Charity") is a decentralized app built on top of the Tezos blockchain. It serves as an accumulator of funds.
 
+> _Note:_ Currently, the frontend works fine only locally. The build fails, because TaquitoJS seems to be using CommonJS `require` modular system, which `vite` does not recognise. I have tried polyfilling `require`, but not with any success. So, for the time being, consider running the frontend locally by cloning the repo, installing dependencies with `npm install` and starting a local server using `npm run dev`. Hopefully, I'll be able to resolve this issue by polyfilling `require` some other way or migrating the whole project to `create-react-app` instead of `vite` (`vite` uses `rollup` for bundling, while `create-react-app` uses `webpack`).
+
+> Do note that although the frontend requires local server for now, that does not mean that it is not fetching data from the Smart Contract. The above note is only in the context of the frontend. Data is still fetched and stored into the Smart Contract, which can be explored using the link given a little below.
+
 ---
 
 ## Overview
@@ -16,7 +20,7 @@ Initially, we had hoped to create a charity platform where users would have the 
 
 ## Development
 
-CharXTZ is a React application, scaffolded using `create-react-app`. It uses the Tezos blockchain, specifically the `ghostnet` testnet chain for the backend, and the Smart Contract has been written in Smartpy.
+CharXTZ is a React application, scaffolded using `vite`. It uses the Tezos blockchain, specifically the `ghostnet` testnet chain for the backend, and the Smart Contract has been written in Smartpy.
 
 For styling, we have opted for TailwindCSS and a Tailwind-compatible components library called Flowbite. There is also a little use of Framer Motion for some subtle micro-animations.
 
@@ -35,7 +39,8 @@ npm run dev
 - The Smart Contract address is `KT1W1xZqZfaMRpR1cd17yVzsKhLgHwepYL9q`, and can be interacted with [here](https://better-call.dev/ghostnet/KT1W1xZqZfaMRpR1cd17yVzsKhLgHwepYL9q).
 - The presentation can be downloaded by clicking on [this link](https://github.com/xylocone/charxtz/raw/develop/presentation.pptx).
 
-<!-- Some images will go here -->
+![Desktop view](https://github.com/xylocone/charxtz/blob/develop/images/desktop.png?raw=true)
+![Mobile view](https://github.com/xylocone/charxtz/blob/develop/images/mobile.JPG?raw=true)
 
 ## License
 
