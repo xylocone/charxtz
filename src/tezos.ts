@@ -2,7 +2,7 @@ import { TezosToolkit } from "@taquito/taquito";
 import { BeaconWallet } from "@taquito/beacon-wallet";
 import { NetworkType } from "@airgap/beacon-sdk";
 
-const CONTRACT_ADDRESS = "KT1UfKHqLHiSqNTTpmPGNHcu9Lgm3k18qyRc";
+const CONTRACT_ADDRESS = "KT1Gz2Fz5Y8U3WQ2kM4y9giNEveYVx34rt2T";
 
 const wallet = new BeaconWallet({
   name: "CharXTZ",
