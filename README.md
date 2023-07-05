@@ -12,7 +12,7 @@ Initially, we had hoped to create a charity platform where users would have the 
 
 - Any funds sent to the contract are kept track of by the contract's storage.
 
-- When the funds reach the threshold of an admin-defined target, the target plus any excess amount accumulated is automatically transferred to the admin-defined charity account associated with the contract. While for a real application, one would want such a message as "Target completed" or the like, for the purpose of this demonstration, we have allowed the contract to merely reset its counters evertime the target is completed, so that it may be used more thoroughly by the evaluators.
+- When the funds reach the threshold of an admin-defined target, the target plus any excess amount accumulated is automatically transferred to the admin-defined charity account associated with the contract. While for a real application, one would want such a message as "Target completed" or the like, for the purpose of this demonstration, we have allowed the contract to merely reset its counters everytime the target is completed, so that it may be used more thoroughly by the evaluators.
 
 ## Development
 
@@ -32,7 +32,7 @@ npm install
 npm run dev
 ```
 
-- The Smart Contract has been deployed [here](https://google.co.in), and can be interacted with [here](https://google.co.in).
+- The Smart Contract address is `KT1Gz2Fz5Y8U3WQ2kM4y9giNEveYVx34rt2T`, and can be interacted with [here](https://better-call.dev/ghostnet/KT1Gz2Fz5Y8U3WQ2kM4y9giNEveYVx34rt2T).
 - The presentation can be downloaded by clicking on [this link](https://google.co.in).
 
 <!-- Some images will go here -->
