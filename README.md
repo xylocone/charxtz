@@ -2,7 +2,7 @@
 
 CharXTZ (pronounced "Char-X-T-Zee", in rhyme with "Charity") is a decentralized app built on top of the Tezos blockchain. It serves as an accumulator of funds.
 
-The webapp has been deployed to Vercel [here](https://charxtz.vercel.app).
+The webapp has been deployed to Vercel [here](https://charxtz.vercel.app). It can also be installed as a PWA (Progressive Web App) from the browser menu.
 
 > _Note_: Make sure you use a Ghostnet account to interact with this dApp. If you're using Temple wallet, and are on mobile, you'll first have to add an RPC in the settings with the URL `https://ghostnet.SmartPy.io` and set it as your default for your account. Unlike the Temple Wallet browser extension, Ghostnet RPC is not there out-of-the-box in the mobile app.
 
