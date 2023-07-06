@@ -13,7 +13,7 @@ function Header() {
       const address = await getConnectedWalletAccountAddress();
       if (address) setUserAddress(address);
     } catch (e) {
-      console.error("There was an error connecting your wallet: ", e);
+      alert(`There was an error connecting your wallet: ${e} `);
     }
   };
 
