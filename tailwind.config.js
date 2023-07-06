@@ -5,8 +5,9 @@ module.exports = {
     "./src/**/*.{ts,tsx}",
     "./public/**/*.html",
   ],
-  plugins: [
-    require("flowbite/plugin")
-  ],
-  theme: {},
+  theme: {
+    extend: {},
+  },
+  plugins: [require("flowbite/plugin")],
 }
+

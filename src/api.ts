@@ -24,9 +24,7 @@ async function donate(amount: number) {
       amount,
       mutez: false,
     });
-    alert("Donation successfully initiated.");
     await op.confirmation(1);
-    alert("Donation has been approved by at least one block.");
   } catch (err) {
     throw err;
   }

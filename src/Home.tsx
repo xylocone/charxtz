@@ -11,11 +11,11 @@ import { Footer } from "./components/Footer";
 const HomePage = () => {
   const [storage, setStorage] = useState<ContractStorage | null>(null);
 
-  async function updateStorage() {
-    setStorage(await getStorage());
-  }
-
   useEffect(() => {
+    async function updateStorage() {
+      setStorage(await getStorage());
+    }
+
     updateStorage();
   }, []);
 
